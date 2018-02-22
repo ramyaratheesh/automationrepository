@@ -34,7 +34,7 @@ public class Jenkinstestscript {
 	  driver.findElement(By.id("password")).clear();
 	  driver.findElement(By.id("password")).sendKeys("invanto");
 	  
-	  driver.findElement(By.xpath(".//*[@id='admin_login']/div/div[3]/button")).click();
+	  driver.findElement(By.xpath(".//*[@id='admin_login']/div/div[3]/butto")).click();
 	  
 	  driver.close();
 	  
