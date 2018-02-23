@@ -9,8 +9,8 @@ import java.util.Properties;
 public class ReadData {
 		
 	  Properties prop;
-	  public  void getProperties(String propertyfilename)  {
-		  File file = new File("C:\\AutomationTesting\\TestScriptJenkins\\Resource\\"+propertyfilename);
+	  public  void getProperties()  {
+		  File file = new File("C:\\AutomationTesting\\TestScriptJenkins\\Resource\\test.properties");
 		  
 			FileInputStream fileInput = null;
 			try {

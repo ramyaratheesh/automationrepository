@@ -50,7 +50,7 @@ public class Jenkinstestscript {
 	public void beforeMethod() {
 		  System.setProperty("webdriver.chrome.driver","C:\\Users\\admin\\Downloads\\chromedriver.exe");
 		  driver = new ChromeDriver(); 
-		  rd.getProperties("test.properties");
+		  rd.getProperties();
 	}
 
 	@AfterClass

@@ -5,6 +5,7 @@
     <classes>
       <class name="com.Jenkinstestscript">
         <methods>
+          <include name="logininvanto"/>
           <include name="signupinvanto"/>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>

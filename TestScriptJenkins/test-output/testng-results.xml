@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="25928" started-at="2018-02-23T09:50:41Z" finished-at="2018-02-23T09:51:07Z">
+  <suite name="Default suite" duration-ms="26279" started-at="2018-02-23T10:09:50Z" finished-at="2018-02-23T10:10:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="25928" started-at="2018-02-23T09:50:41Z" finished-at="2018-02-23T09:51:07Z">
+    <test name="Default test" duration-ms="26279" started-at="2018-02-23T10:09:50Z" finished-at="2018-02-23T10:10:17Z">
       <class name="com.Jenkinstestscript">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.Jenkinstestscript@4d3167f4]" name="beforeMethod" is-config="true" duration-ms="4417" started-at="2018-02-23T09:50:41Z" finished-at="2018-02-23T09:50:46Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.Jenkinstestscript@4d3167f4]" name="beforeMethod" is-config="true" duration-ms="3861" started-at="2018-02-23T10:09:50Z" finished-at="2018-02-23T10:09:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="signupinvanto()[pri:0, instance:com.Jenkinstestscript@4d3167f4]" name="signupinvanto" duration-ms="13678" started-at="2018-02-23T09:50:46Z" finished-at="2018-02-23T09:50:59Z">
+        <test-method status="PASS" signature="signupinvanto()[pri:0, instance:com.Jenkinstestscript@4d3167f4]" name="signupinvanto" duration-ms="9772" started-at="2018-02-23T10:09:54Z" finished-at="2018-02-23T10:10:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signupinvanto -->
-        <test-method status="PASS" signature="logininvanto()[pri:2, instance:com.Jenkinstestscript@4d3167f4]" name="logininvanto" duration-ms="7684" started-at="2018-02-23T09:50:59Z" finished-at="2018-02-23T09:51:07Z">
+        <test-method status="PASS" signature="logininvanto()[pri:2, instance:com.Jenkinstestscript@4d3167f4]" name="logininvanto" duration-ms="12351" started-at="2018-02-23T10:10:04Z" finished-at="2018-02-23T10:10:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logininvanto -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.Jenkinstestscript@4d3167f4]" name="afterMethod" is-config="true" duration-ms="116" started-at="2018-02-23T09:51:07Z" finished-at="2018-02-23T09:51:07Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.Jenkinstestscript@4d3167f4]" name="afterMethod" is-config="true" duration-ms="262" started-at="2018-02-23T10:10:16Z" finished-at="2018-02-23T10:10:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
