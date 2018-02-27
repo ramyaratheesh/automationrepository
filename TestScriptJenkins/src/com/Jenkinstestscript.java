@@ -16,6 +16,7 @@ import com.ReadData;
 public class Jenkinstestscript {
 	public WebDriver driver;
 	ReadData rd = new ReadData();
+	
 	@Test (priority =2)
 	public void logininvanto() throws Exception {
 		 // System.setProperty("webdriver.firefox.marionette","C:\\geckodriver.exe");
@@ -41,8 +42,20 @@ public class Jenkinstestscript {
 	public void signupinvanto() throws Exception {
 		  driver.navigate().to("https://develop.invanto.net/apps");
 		  driver.findElement(By.xpath(rd.getData("accessbutton"))).click();
+
+		  driver.findElement(By.xpath(rd.getData("email"))).clear();
+		  driver.findElement(By.xpath(rd.getData("email"))).sendKeys("ramya@invanto.com"); 
 		  
-		 // driver.findElement(By.xpath("html/body/div[3]/div[3]/div/div[1]/div/div[2]/div[1]/a[1]")).click();
+		  driver.findElement(By.xpath(rd.getData("name"))).clear();
+		  driver.findElement(By.xpath(rd.getData("name"))).sendKeys("Ramya"); 
+		  
+		  driver.findElement(By.xpath(rd.getData("password"))).clear();
+		  driver.findElement(By.xpath(rd.getData("password"))).sendKeys("invanto"); 
+		  
+		  driver.findElement(By.xpath(rd.getData("confirmpassword"))).clear();
+		  driver.findElement(By.xpath(rd.getData("confirmpassword"))).sendKeys("invanto"); 
+		  
+		  driver.findElement(By.xpath(rd.getData("completesignup"))).click();
 		  
 	}
 
@@ -50,7 +63,8 @@ public class Jenkinstestscript {
 	public void beforeMethod() {
 		  System.setProperty("webdriver.chrome.driver","C:\\Users\\admin\\Downloads\\chromedriver.exe");
 		  driver = new ChromeDriver(); 
-		  rd.getProperties("test.properties");
+		  driver.manage().window().maximize();
+		  rd.getProperties("loginsignup.properties");
 	}
 
 	@AfterClass

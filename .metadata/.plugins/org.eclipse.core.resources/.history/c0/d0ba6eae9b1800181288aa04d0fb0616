@@ -1,0 +1,31 @@
+package com;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+
+import com.ReadData;
+
+public class FrontSite {
+	public WebDriver driver;
+	
+  @Test
+  public void checkoutprocess() {
+	  driver.get("http://testsiterplan.membership.invanto.net/welcome");
+	  driver.findElement(By.xpath())).click();
+	  
+  }
+  @BeforeClass
+  public void beforeClass() {
+	  
+	  
+  }
+
+  @AfterClass
+  public void afterClass() {
+	  
+	  
+  }
+
+}
