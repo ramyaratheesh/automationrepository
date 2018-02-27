@@ -1,0 +1,24 @@
+package com;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+
+import com.MFPayment;
+import com.dbconnection;
+
+public class DBverify {
+	MFPayment rd = new MFPayment();
+	dbconnection obj = new dbconnection();
+  @Test
+  public void f() {
+  }
+  @BeforeClass
+  public void beforeClass() {
+  }
+
+  @AfterClass
+  public void afterClass() {
+  }
+
+}

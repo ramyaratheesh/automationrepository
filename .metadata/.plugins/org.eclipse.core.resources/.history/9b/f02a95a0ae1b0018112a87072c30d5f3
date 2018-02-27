@@ -1,0 +1,6 @@
+DBConnectionString = jdbc:mysql://rdsaurinvanto.cluster-c9oxqr3crfln.us-east-1.rds.amazonaws.com:3306/DFDEVELOP
+url = http://testsiterplan.membership.invanto.net/welcome
+username = DBADFDEV
+password = D4devteam#1
+query = select name, username from user order by id desc;
+dbColumn = name

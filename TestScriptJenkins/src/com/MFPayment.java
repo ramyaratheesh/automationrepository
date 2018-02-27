@@ -37,10 +37,10 @@ public class MFPayment {
       
       driver.manage().timeouts().implicitlyWait(3000,TimeUnit.SECONDS);
       driver.findElement(By.xpath(read.getData("payeename"))).clear();
-      driver.findElement(By.xpath(read.getData("payeename"))).sendKeys("Ramya");
+      driver.findElement(By.xpath(read.getData("payeename"))).sendKeys("Rams");
       
       driver.findElement(By.xpath(read.getData("payeeemail"))).clear();
-      driver.findElement(By.xpath(read.getData("payeeemail"))).sendKeys("ramya@invanto.com");
+      driver.findElement(By.xpath(read.getData("payeeemail"))).sendKeys("ram@invanto.com");
       driver.findElement(By.xpath(read.getData("creditcardnumber"))).clear();
       driver.findElement(By.xpath(read.getData("creditcardnumber"))).sendKeys("4242424242424242");
       
@@ -54,8 +54,11 @@ public class MFPayment {
       driver.findElement(By.xpath(read.getData("cvvcode"))).sendKeys("213");
       
       driver.findElement(By.xpath(read.getData("checkoutbutton"))).click();
-     
-	  
+      
+      driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
+      driver.findElement(By.xpath(read.getData("continuebutton"))).click();
+      
+      
   }
   @BeforeClass
   public void beforeClass() {
