@@ -1,0 +1,51 @@
+package com;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+
+import com.MFPayment;
+import com.dbconnection;
+
+public class DBverify {
+	MFPayment rd = new MFPayment();
+	dbconnection obj = new dbconnection();
+public void getnameemail() {
+	String a, b ;
+	
+}
+	
+  @Test
+  public void verifydbrecords() {
+	  
+	//  String name = ";
+	//  String username = "rr@invanto.com";
+	  
+	  System.out.println("Name in DB" +obj.myName);
+	  System.out.println("Username in DB" +obj.myUsername);
+	  
+	  System.out.println("Name entered in front site" +rd.name);
+	  System.out.println("Username in front site" +rd.email);
+	  
+	 
+	  
+	  if ((rd.name1).equals(obj.myName) && (rd.email1).equals(obj.myUsername)) {
+			System.out.println("Entered name and username exists in database");
+		} 
+		else {
+			System.out.println("Record doesn't exists in Database");
+		}
+	  
+  }
+  @BeforeClass
+  public void beforeClass() throws Exception {
+	  obj.dbcheck();
+	  rd.passemail();
+	  rd.passdetails();
+  }
+
+  @AfterClass
+  public void afterClass() {
+  }
+
+}

@@ -2,40 +2,40 @@ package com;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 
 import com.MFPayment;
 import com.dbconnection;
 
 public class DBverify {
+	public WebDriver driver;
 	MFPayment rd = new MFPayment();
 	dbconnection obj = new dbconnection();
-
 	
-  @Test
-  public void verifydbrecords() {
-	  
-	  String name = "Rams";
-	  String username = "ram@invanto.com";
-	  
-	//  System.out.println("Name in DB" +obj.myName);
-	//  System.out.println("Username in DB" +obj.myUsername);
-	  
-	  if ((name.equals(obj.myName) && username.equals(obj.myUsername))) {
+	@Test
+	public void verifydbrecords() throws Exception {
+		 obj.dbcheck();
+		 String emailpassed = rd.passemail();
+		 String namepassed = rd.passdetails();
+		 System.out.println("Name in DB" +obj.myName);
+		 System.out.println("Username in DB" +obj.myUsername);
+		  
+		 System.out.println("Name entered in front site" +namepassed);
+		 System.out.println("Username in front site" +emailpassed); 
+		  
+		 if ((namepassed).equals(obj.myName) && (emailpassed).equals(obj.myUsername)) {
 			System.out.println("Entered name and username exists in database");
-		} 
-		else {
+		  }else {
 			System.out.println("Record doesn't exists in Database");
-		}
-	  
-  }
-  @BeforeClass
-  public void beforeClass() throws Exception {
-	  obj.dbcheck();
-  }
-
-  @AfterClass
-  public void afterClass() {
-  }
-
+		  }  
+	}
+	@BeforeClass
+	public void beforeClass(){
+		
+	}
+	
+	@AfterClass
+	public void afterClass() {
+	}
 }

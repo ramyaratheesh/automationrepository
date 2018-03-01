@@ -10,6 +10,21 @@
           <include name="verifydbrecords"/>
         </methods>
       </class> <!-- com.DBverify -->
+      <class name="com.Jenkinstestscript">
+        <methods>
+          <include name="logininvanto"/>
+          <include name="signupinvanto"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.Jenkinstestscript -->
+      <class name="com.MFPayment">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="testrun1"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.MFPayment -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

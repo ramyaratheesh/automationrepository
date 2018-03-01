@@ -1,14 +1,9 @@
 package com;
 
-import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.Properties;
+import org.testng.annotations.Test;
 
 import org.openqa.selenium.WebDriver;
 
@@ -23,7 +18,8 @@ public class dbconnection {
 	public WebDriver driver;
 	ReadData read = new ReadData ();
 	String myName, myUsername;
-	   
+
+	
 @Test
 	public void dbcheck () throws  Exception {	
 	 read.getProperties("databasetesting.properties");
@@ -54,10 +50,10 @@ public class dbconnection {
      
      		// While Loop to iterate through all data and print results		
 			while (rs.next()){
-		        		myName = rs.getString(1);								        
-                        myUsername = rs.getString(2);					                               
-                        System. out.println("Name: "+myName+"  "+"Username: "+myUsername);		
-                }		
+		        myName = rs.getString(1);								        
+                myUsername = rs.getString(2);					                               
+       //       System. out.println("Name: "+myName+"  "+"Username: "+myUsername);		
+             }		
   			 // closing DB Connection		
   			con.close();			
 	}
@@ -76,5 +72,4 @@ public class dbconnection {
   @AfterClass
   public void afterClass() {
   }
-
 }

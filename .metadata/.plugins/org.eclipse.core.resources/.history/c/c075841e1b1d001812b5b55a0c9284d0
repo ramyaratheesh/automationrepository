@@ -1,0 +1,170 @@
+package com;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterClass;
+
+import com.ReadData;
+
+public class MFPayment {
+	public WebDriver driver;
+	ReadData read = new ReadData ();
+	String name, email;
+	
+public  String getName() {
+	System.out.println("Name: ");
+    Scanner scan1 = new Scanner(System.in);
+    name = scan1.nextLine();
+    System.out.println(name);
+   	return name;
+}
+
+public  String getEmail() {
+    System.out.println("Email: ");
+    Scanner scan2 = new Scanner(System.in);
+    email = scan2.nextLine();
+    System.out.println(email);
+	return email;
+}
+
+  public String checkoutprocess() throws Exception {
+	
+	  driver.get("http://testsiterplan.membership.invanto.net/welcome");
+	  WebElement element = driver.findElement(By.xpath(read.getData("membershipmenu")));
+      Actions action = new Actions(driver);
+      action.moveToElement(element).perform();
+
+      WebElement subElement = driver.findElement(By.xpath(read.getData("firstplan")));
+      action.moveToElement(subElement);
+
+      action.click();
+      action.perform();
+         
+      driver.findElement(By.xpath(read.getData("planunlockbutton"))).click();
+      
+      driver.manage().timeouts().implicitlyWait(3000,TimeUnit.SECONDS);
+      
+      driver.findElement(By.xpath(read.getData("payeename"))).clear();
+      driver.findElement(By.xpath(read.getData("payeename"))).sendKeys(name);
+      
+      driver.findElement(By.xpath(read.getData("payeeemail"))).clear();
+      driver.findElement(By.xpath(read.getData("payeeemail"))).sendKeys(email);
+      
+   //   WebElement phoneno = driver.findElement(By.xpath(read.getData("phonenumber")));
+   //   WebElement address = driver.findElement(By.xpath(read.getData("address")));
+      
+      System.out.println("Phone no:"+driver.findElement(By.xpath(read.getData("phonenumber"))));
+  //    try {
+    //  if(driver.findElements(By.xpath(read.getData("phonenumber"))).size() != 0){
+    //	  System.out.println("Element is Present");
+    //	  }else{
+    //	  System.out.println("Element is Absent");
+    //	  }
+   // 	  Boolean isPresent = driver.findElements(By.xpath(read.getData("phonenumber"))).size() > 0  ;
+    //	  if (isPresent == true) {
+   //  if (driver.findElement(By.xpath(read.getData("phonenumber"))).isDisplayed()) {
+    	  
+    	  if(driver.findElement(By.xpath(read.getData("phonenumber")))!= null){
+    		  System.out.println("Element is Present");
+    		
+    	  
+    	  driver.findElement(By.xpath(read.getData("phonenumber"))).clear();
+    	  driver.findElement(By.xpath(read.getData("phonenumber"))).sendKeys("9999999999");
+    	  }else {
+    		  System.out.println("Phone number in checkout page is disabled for this site");
+    	  }
+    //  }catch(NoSuchElementException e) {
+    	 
+     // }
+    	  JavascriptExecutor jse = (JavascriptExecutor)driver;
+    	  jse.executeScript("window.scrollBy(0,250)", "");
+    	  jse.executeScript("window.scrollBy(0,250)", "");
+    	  //System.out.println("Address:"+driver.findElement(By.xpath(read.getData("address"))));
+    //  try {
+    	  
+    	  if(driver.findElement(By.xpath(read.getData("address")))!= null){
+    		  System.out.println("Address:"+driver.findElement(By.xpath(read.getData("address"))));
+    		  System.out.println("Element is Present");
+    		
+    	  
+    //	  Boolean isPresent1 = driver.findElements(By.xpath(read.getData("address"))).size() > 0  ;
+    //	  if (isPresent1 == true) {
+    	  
+ //     if(driver.findElements(By.xpath(read.getData("address"))).size() != 0){
+//    	  System.out.println("Address is Present");
+    //  if(driver.findElement(By.xpath(read.getData("address"))).isDisplayed()) {
+	    	  driver.findElement(By.xpath(read.getData("address"))).clear();
+	    	  driver.findElement(By.xpath(read.getData("address"))).sendKeys("Wakad");
+	    	  
+	          driver.findElement(By.xpath(read.getData("city"))).clear();
+	          driver.findElement(By.xpath(read.getData("city"))).sendKeys("Pune");
+	          
+	          driver.findElement(By.xpath(read.getData("state"))).clear();
+	          driver.findElement(By.xpath(read.getData("state"))).sendKeys("Maharashtra");
+	          
+	          
+	          driver.findElement(By.xpath(read.getData("zipcode"))).clear();
+	          driver.findElement(By.xpath(read.getData("zipcode"))).sendKeys("411057");
+	          
+	          Select country = new Select(driver.findElement(By.xpath(read.getData("country"))));
+	          country.selectByVisibleText("India");
+    	  }else {
+    		  System.out.println("Address in checkout page is disabled for this site"); 
+     	}
+    //  }catch (NoSuchElementException e) {
+    	   
+   //    }
+      
+      driver.findElement(By.xpath(read.getData("creditcardnumber"))).clear();
+      driver.findElement(By.xpath(read.getData("creditcardnumber"))).sendKeys("4242424242424242");
+      
+      Select expmonth = new Select(driver.findElement(By.xpath(read.getData("expirationmonth"))));
+      expmonth.selectByVisibleText("3");
+      
+      Select expyear = new Select(driver.findElement(By.xpath(read.getData("expirationyear"))));
+      expyear.selectByVisibleText("2021");
+      
+      driver.findElement(By.xpath(read.getData("cvvcode"))).clear();
+      driver.findElement(By.xpath(read.getData("cvvcode"))).sendKeys("213");
+      
+      driver.findElement(By.xpath(read.getData("checkoutbutton"))).click();
+      
+      driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
+      driver.findElement(By.xpath(read.getData("continuebutton"))).click();      
+      return name;
+     
+      }
+  
+@Test
+
+public void testrun1() throws Exception {
+	checkoutprocess();
+}
+
+  @BeforeClass
+  public void beforeClass() {
+	  System.setProperty("webdriver.chrome.driver","C:\\Users\\admin\\Downloads\\chromedriver.exe");
+	  driver = new ChromeDriver(); 
+	  driver.manage().window().maximize();
+	  read.getProperties("mfpayment.properties");
+	  
+  }
+
+  @AfterClass
+  public void afterClass() {
+	//  driver.close();
+  }
+
+}
