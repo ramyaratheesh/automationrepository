@@ -37,7 +37,7 @@ public class MFPayment {
 	public WebDriver driver;
 	ReadData read = new ReadData ();
 	String name = "InvantoUser";
-	String email = "in";
+	String email = "ing@invanto.com";
 	
 /*	public String getName() {
 		System.out.println("Name: ");

@@ -1,9 +1,0 @@
-#menu
-membershipmenu = html/body/header/div/div[2]/ul/li[1]/a
-firstplan = html/body/header/div/div[2]/ul/li[1]/ul/li[1]//a
-planunlockbutton =html/body/div[4]/div/div/a
-payeename = .//*[@id='gateway-payment-form']/div[2]/div[1]/div[4]/div[2]/div[1]/input
-payeeemail = .//*[@id='gateway-payment-form']/div[2]/div[1]/div[4]/div[2]/div[2]/input
-creditcardnumber = .//*[@id='payment_div_cc']/div[2]/div[1]/input
-expirationmonth = .//*[@id='payment_div_cc']/div[2]/div[2]/select[1]
-expirationyear = .//*[@id='payment_div_cc']/div[2]/div[2]/select[2]

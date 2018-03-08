@@ -14,5 +14,10 @@
 			<type>2</type>
 			<location>C:/Users/admin/Downloads/eclipse/configuration/org.eclipse.osgi/1020/0/.cp</location>
 		</link>
+		<link>
+			<name>.link1</name>
+			<type>2</type>
+			<location>C:/Users/admin/.m2/repository</location>
+		</link>
 	</linkedResources>
 </projectDescription>

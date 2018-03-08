@@ -1,6 +1,0 @@
-DBConnectionString = jdbc:mysql://localhost:3306/DFDEVELOP
-url = https://mail.google.com
-username = DBADFDEV
-password = D4devteam#1
-query = select name, username from user;
-dbColumn = name

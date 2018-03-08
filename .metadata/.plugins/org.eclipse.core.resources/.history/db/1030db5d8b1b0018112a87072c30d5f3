@@ -1,4 +1,0 @@
-#menu
-membershipmenu = html/body/header/div/div[2]/ul/li[1]/a
-firstplan = html/body/header/div/div[2]/ul/li[1]/ul/li[1]//a
-planunlockbutton =html/body/div[4]/div/div/a
